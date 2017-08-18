@@ -10,12 +10,11 @@ import Foundation
 
 class DataLoader {
     
+    private var exhibitions: [Exhibition] = []
     private var galleries: [String: Gallery] = [:]
     private var works: [String: Work] = [:]
     
     func loadExhibition() -> [Exhibition] {
-        
-        var exhibitions: [Exhibition] = []
         
         let exhibitionsRawArray = loadItems(from: "exhibitions")
         

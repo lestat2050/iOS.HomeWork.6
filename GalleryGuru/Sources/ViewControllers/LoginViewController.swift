@@ -69,11 +69,10 @@ extension LoginViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension LoginViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        self.previewImagesPageController.currentPage = indexPath.row
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let indexPage = collectionView.contentOffset.x / collectionView.frame.width
+        self.previewImagesPageController.currentPage = Int(indexPage)
     }
 
 }
